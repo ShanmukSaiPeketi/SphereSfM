@@ -127,6 +127,10 @@ void Shuffle(const uint32_t num_to_shuffle, std::vector<T>* elems) {
   }
 }
 
+inline void SetDeterministicRandomSeed() {
+  SetPRNGSeed(42);  // You can change 42 to any fixed integer
+}
+
 }  // namespace colmap
 
 #endif  // COLMAP_SRC_UTIL_RANDOM_H_
