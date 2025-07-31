@@ -162,7 +162,9 @@ int RunFeatureExtractor(int argc, char** argv) {
   if (options.sift_extraction->use_gpu && kUseOpenGL) {
     app.reset(new QApplication(argc, argv));
   }
-
+  // bitwise-identical SIFT keypoints and descriptors
+  colmap::SetDeterministicRandomSeed();
+  
   SiftFeatureExtractor feature_extractor(reader_options,
                                          *options.sift_extraction);
 
